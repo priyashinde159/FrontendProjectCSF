@@ -1,0 +1,53 @@
+<!-- donation.component.html -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+
+      <div class="donation-form">
+        <div class="card">
+          <h2>Donation Form</h2>
+          <form (ngSubmit)="submitForm()">
+            <div class="form-group">
+              <label for="mobileNumber">Mobile Number:</label>
+              <input type="number" id="mobileNumber" name="mobileNumber" [(ngModel)]="donation.mobileNumber" required>
+            </div>
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" [(ngModel)]="donation.name" required>
+            </div>
+            <div class="form-group">
+              <label for="location">Location:</label>
+              <input type="text" id="location" name="location" [(ngModel)]="donation.location" required>
+            </div>
+            <div class="form-group">
+              <label for="category"> Donation Category:</label>
+              <input type="text" id="category" name="category" [(ngModel)]="donation.category" required>
+            </div>
+            <div class="form-group">
+              <label for="quantity">Quantity:</label>
+              <input type="number" id="quantity" name="quantity" [(ngModel)]="donation.quantity" required>
+            </div>
+            <div class="form-group">
+              <label for="quantity">Image:</label>
+              <div class="container row">
+                <div class="col-md-6">
+                  <input type="file"/>
+
+                </div><br>
+                <div class="col-md-12">
+                  <input type="button" value="upload" >
+                </div>
+              </div><br>
+            </div>
+              <button type="submit" [routerLink]="['/home']">Donate</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="image-container">
+        <img src="assets/img/donar.jpg" alt="Centered Image" class="centered-img" style="height: 720px;; width:100%;" />
+      </div>
+    </div>
+  </div>
+</div>

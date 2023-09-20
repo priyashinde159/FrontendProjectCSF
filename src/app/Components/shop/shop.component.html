@@ -1,0 +1,162 @@
+<br><br><br><br>
+<header>
+    <nav>
+        
+        <h5><b>Cloth Share Foundation</b></h5>
+        
+        <div class="search">
+            <input type="text" name="" id="" placeholder="Search Here">
+            <button class="btn">Search</button>
+            <button class="btn">Pay</button>
+            
+            <button class="btn btn-primary" [routerLink]="['/cart   ']">
+                <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+                <div style="font-size: 10px;" class="badge bg-danger" >0</div>
+            </button>
+            <button class="btn" [routerLink]="['/home']">Logout</button>
+        </div>
+       
+        
+
+        
+    </nav>
+</header>
+<main>
+    <div class="container">
+        
+
+        <div  class="card">
+            <h2 class="my-2">Cloths</h2>
+            <div class="cards " *ngFor="let product of products"s>
+                
+                <div class="card-item" >
+                    <img [src]="product.imagePath" alt="" width="200px">
+                    <div class="lines " >
+                        <p class="text-center my-1"><b style="color: black;" >{{product.productName}}</b></p>
+                        <p class="text-center my-1"><b style="color: red;">₹ {{product.price}}</b></p>
+                        <p class="text-center my-1"><b style="color: green;">Grab Now!</b></p>
+                        <button (click)="addToCart(product)">Add to Cart</button>
+                    </div >
+                </div>
+           
+
+               <!-- <div class="card-item">
+                    <img src="product.imagePath"  alt="" width="200px">
+                    <div class="lines">
+                        <p class="text-center my-1"><b style="color: black;" >{{product.productName}}</b></p>
+                        <p class="text-center my-1"><b style="color: red;">₹{{product.price}}</b></p>
+                        <p class="text-center my-1"><b style="color: green;">Grab Now!</b></p>
+                        <button (click)="addToCart(product)">Add to Cart</button>
+                    </div>
+                </div> -->
+
+               <!-- <div class="card-item">
+                    <img src="https://images.meesho.com/images/products/294973409/bvkhu_400.webp" alt="" width="200px">
+                    <div class="lines">
+                        <p class="text-center my-1"><b style="color: black;" >Girls Top & Pants</b></p>
+                        <p class="text-center my-1"><b style="color: red;">₹70</b></p>
+                        <p class="text-center my-1"><b style="color: green;">Grab Now!</b></p>
+                        <button (click)="addToCart(product)">Add to Cart</button>
+                    </div>
+                </div>  -->
+
+                <!-- <div class="card-item" (click)="onClick()">
+                    <img src="https://images.meesho.com/images/products/198246713/2xhtm_400.webp"  alt="" width="200px">
+                    <div class="lines">
+                        <p class="text-center my-1"><b style="color: black;" >Top</b></p>
+                        <p class="text-center my-1" ><b style="color: red;">₹30</b></p>
+                        <p class="text-center my-1"><b style="color: green;">Grab Now!</b></p>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+<!--Books-->
+        <div class="card">
+            <h2 class="my-2">Books</h2>
+            <div class="cards">
+                <div class="card-item">
+                    <img src="https://bc-img.s3.ap-south-1.amazonaws.com/images/cover/bc/9781310394460 .jpg" alt="" width="200px">
+                    <div class="lines">
+                        <p class="text-center my-1"><b style="color: black;" >Childrens Book</b></p>
+                        <p class="text-center my-1"><b style="color: red;">₹20</b></p>
+                        <p class="text-center my-1"><b style="color: green;">Grab Now!</b></p>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="https://testcub1.s3.amazonaws.com/media/images/books/A_Compact_And_Comprenensive_Book_Of_Lit_Foudation_Mathematic_Class_-_Vi2022-10-28-17-52-41.jpg" alt="" width="200px">
+                    <div class="lines">
+                        <p class="text-center my-1"><b style="color: black;" >Mathematics Class-VI</b></p>
+                        <p class="text-center my-1"><b style="color: red;">₹30</b></p>
+                        <p class="text-center my-1"><b style="color: green;">Grab Now!</b></p>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="https://testcub1.s3.amazonaws.com/media/images/books/International_Mathematics_Olympiad_Work_Book_-Class_72022-10-29-12-43-38.jpg" alt="" width="200px">
+                    <div class="lines">
+                        <p class="text-center my-1"><b style="color: black;" >Olympiad WorkBook</b></p>
+                        <p class="text-center my-1"><b style="color: red;">₹20</b></p>
+                        <p class="text-center my-1"><b style="color: green;">Grab Now!</b></p>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="https://testcub1.s3.amazonaws.com/media/images/books/Mtg_International_English_Olympiad_Ieo_Work_Book_-_Class_72022-09-06-14-43-24.jpg" alt="" width="200px">
+                    <div class="lines">
+                        <p class="text-center my-1"><b style="color: black;" >WorkBook</b></p>
+                        <p class="text-center my-1"><b style="color: red;">₹20</b></p>
+                        <p class="text-center my-1"><b style="color: green;">Grab Now!</b></p>
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+<!--Stationary-->
+        <div class="card">
+            <h2 class="my-2">Stationary</h2>
+            <div class="cards">
+                <div class="card-item">
+                    <img src="https://images.meesho.com/images/products/129810332/vpmpp_400.webp" alt="" width="200px">
+                    <div class="lines">
+                        <p class="text-center my-1"><b style="color: black;" >School Compass kit</b></p>
+                        <p class="text-center my-1"><b style="color: red;">₹10</b></p>
+                        <p class="text-center my-1"><b style="color: green;">Grab Now!</b></p>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="https://images.meesho.com/images/products/157168354/jwiqx_400.webp" alt="" width="200px">
+                    <div class="lines">
+                        <p class="text-center my-1"><b style="color: black;" >Bag with bottle free</b></p>
+                        <p class="text-center my-1"><b style="color: red;">₹60</b></p>
+                        <p class="text-center my-1"><b style="color: green;">Grab Now!</b></p>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="https://images.meesho.com/images/products/233289419/xrstl_400.webp" alt="" width="200px">
+                    <div class="lines">
+                        <p class="text-center my-1"><b style="color: black;" >Ban10 Bag</b></p>
+                        <p class="text-center my-1"><b style="color: red;">₹60</b></p>
+                        <p class="text-center my-1"><b style="color: green;">Grab Now!</b></p>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="https://images.meesho.com/images/products/198373116/u3d6f_400.webp" alt="" width="200px">
+                    <div class="lines">
+                        <p class="text-center my-1"><b style="color: black;" >4 Set Activity Book</b></p>
+                        <p class="text-center my-1"><b style="color: red;">₹50</b></p>
+                        <p class="text-center my-1"><b style="color: green;">Grab Now!</b></p>
+                    </div>
+                </div>
+             
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="flex-all-center">
+    <p>Copyright &copy; MyCart.com </p>
+</footer>

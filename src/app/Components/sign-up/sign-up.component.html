@@ -1,0 +1,105 @@
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-5 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                <form class="mx-1 mx-md-4" #signUpform="ngForm" (ngSubmit)="submitForm()">
+                  <small [class.text-danger]="msg.status==500">{{msg.message}}</small>
+
+                  <div class="d-flex flex-row align-items-center mb-4 form-group">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" class="form-control" id="form3Example1c" name="userName"
+                        [(ngModel)]="user.userName" #userName="ngModel"
+                        [class.is-invalid]="userName.invalid && userName.touched" required>
+                      <div>
+                        <small class="text-danger" [class.d-none]="userName.valid || userName.untouched">User name is
+                          required
+                          field</small>
+                      </div>
+                      <label class="form-label" for="form3Example1c"></label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4 form-group">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" required
+                        pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" #email="ngModel"
+                        [class.is-invalid]="email.invalid && email.touched" />
+
+                      <div *ngIf="email.errors && (email.invalid && email.touched)">
+                        <small class="text-danger" *ngIf="email.errors['required']">Email id is required field</small>
+                        <small class="text-danger" *ngIf="email.errors['pattern']">Enter valid Email id</small>
+                      </div>
+                      <label class="form-label" for="email"></label>
+                    </div>
+                  </div>
+
+                  <div class=" d-flex flex-row align-items-center mb-4 form-group">
+                    <i class="fas fa-phone-alt fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="number" class="form-control" id="contact" name="contact" [(ngModel)]="user.contact"
+                        required>
+                      <div>
+                        <label for="contact"> </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4 form-group">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" class="form-control" id="password" name="password"
+                        [(ngModel)]="user.password" required #password="ngModel"
+                        [class.is-invalid]="password.invalid && password.touched" />
+                      <div>
+                        <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is
+                          required
+                          field</small>
+                      </div>
+                      <label class="form-label" for="password"></label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4" form-group>
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" class="form-control" id="cpassword" name="cpassword"
+                        (ngModel)="user.password" required #cpassword='ngModel'
+                        [class.is-invalid]="cpassword.invalid && cpassword.touched" />
+                      <small class="text-danger"
+                        [class.d-none]="(cpassword.value==password.value) || cpassword.untouched">
+                        Password and confirm password must be same</small>
+                      <label class="form-label" for="cpassword"></label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button [disabled]="signUpform.form.invalid" type="submit" class="btn btn-primary">Register</button>
+                  </div>
+
+                </form>
+                <br>
+                <a [routerLink]="['/login']">Register User? Login here</a>
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                  class="img-fluid" alt="Sample image">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
